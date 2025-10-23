@@ -29,3 +29,5 @@ public class RacingCar {
         System.out.println(MOVE_SIGN.repeat(raceProgressCount));
     }
 }
+
+//책임 분리 필요. 코드 완성 후 수정

@@ -8,8 +8,8 @@ public class Input {
         return Console.readLine();
     }
 
-    public int input_trials(int n){
-        return n;
+    public int input_trials(){
+        return Integer.parseInt(Console.readLine());
     }
 
 }
