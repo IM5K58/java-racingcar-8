@@ -22,6 +22,7 @@ public class RacingCarList {
             System.out.println();
         }
     }
+
     private ArrayList<RacingCar> findRacingWinner(){
         RacingCar racingCarFirstProgress = racingCarList.get(0);
         for(RacingCar racingCar : racingCarList){
