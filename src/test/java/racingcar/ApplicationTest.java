@@ -24,10 +24,18 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
-    void 예외_테스트() {
+    void 예외_테스트_5글자_이상() {
         assertSimpleTest(() ->
             assertThatThrownBy(() -> runException("pobi,javaji", "1"))
                 .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    void 예외_테스트_예외_문자사용() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("Pobi,b@n", "2"))
+                        .isInstanceOf(IllegalArgumentException.class)
         );
     }
 

@@ -41,7 +41,7 @@ public class RacingCarList {
     }
     public void PrintWinners(){
         ArrayList<RacingCar> winners = findRacingWinner();
-        System.out.print("최종 우승자: ");
+        System.out.print("최종 우승자 : ");
         for(int i=0; i<winners.size(); i++){
             System.out.print(winners.get(i).name());
             if(!(i == winners.size()-1)){
