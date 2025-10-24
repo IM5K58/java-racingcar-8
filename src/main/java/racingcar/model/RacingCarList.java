@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RacingCarList {
-    private ArrayList<RacingCar> racingCarList;
+    private ArrayList<RacingCar>racingCarList;
     public RacingCarList() {
         this.racingCarList = new ArrayList<RacingCar>();
     }
@@ -19,6 +19,7 @@ public class RacingCarList {
                 racingCar.race();
                 racingCar.raceResult();
             }
+            System.out.println();
         }
     }
     private ArrayList<RacingCar> findRacingWinner(){
