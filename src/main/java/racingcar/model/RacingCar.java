@@ -28,6 +28,17 @@ public class RacingCar {
         System.out.print(carName + " : ");
         System.out.println(MOVE_SIGN.repeat(raceProgressCount));
     }
+
+    public boolean isAhead(RacingCar compareCar) {
+        return this.raceProgressCount > compareCar.raceProgressCount;
+    }
+    public boolean hasSameProgress(RacingCar compareCar) {
+        return this.raceProgressCount == compareCar.raceProgressCount;
+    }
+
+    public String name() {
+        return carName;
+    }
 }
 
 //책임 분리 필요. 코드 완성 후 수정
