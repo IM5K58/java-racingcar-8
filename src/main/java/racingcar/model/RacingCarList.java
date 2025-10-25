@@ -1,7 +1,8 @@
 package racingcar.model;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class RacingCarList {
     private ArrayList<RacingCar>racingCarList;
@@ -13,40 +14,34 @@ public class RacingCarList {
         racingCarList.add(racingCar);
     }
 
-    public void racingGame(int n){
-        for(int i=0; i<n; i++){
-            for(RacingCar racingCar : racingCarList){
-                racingCar.race();
-                racingCar.raceResult();
-            }
-            System.out.println();
+    public void racingGame(){
+        for(RacingCar racingCar:racingCarList){
+            racingCar.race();
         }
     }
 
-    private ArrayList<RacingCar> findRacingWinner(){
-        RacingCar racingCarFirstProgress = racingCarList.get(0);
-        for(RacingCar racingCar : racingCarList){
-            if(racingCar.isAhead(racingCarFirstProgress)){
-                racingCarFirstProgress = racingCar;
-            }
-        }
-
+    public ArrayList<RacingCar> findRacingWinner(){
+        RacingCar maxProgress = findMaxProgress();
         ArrayList<RacingCar> racingWinner = new ArrayList<>();
         for(RacingCar racingCar : racingCarList){
-            if(racingCar.hasSameProgress(racingCarFirstProgress)){
+            if(racingCar.hasSameProgress(maxProgress)){
                 racingWinner.add(racingCar);
             }
         }
         return racingWinner;
     }
-    public void PrintWinners(){
-        ArrayList<RacingCar> winners = findRacingWinner();
-        System.out.print("최종 우승자 : ");
-        for(int i=0; i<winners.size(); i++){
-            System.out.print(winners.get(i).name());
-            if(!(i == winners.size()-1)){
-                System.out.print(", ");
+
+    private RacingCar findMaxProgress() {
+        RacingCar maxProgress = racingCarList.getFirst();
+        for(RacingCar racingCar : racingCarList){
+            if(racingCar.isAhead(maxProgress)){
+                maxProgress = racingCar;
             }
         }
+        return maxProgress;
+    }
+
+    public List<RacingCar> getCarList(){
+        return Collections.unmodifiableList(racingCarList);
     }
 }

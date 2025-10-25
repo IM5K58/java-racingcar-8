@@ -30,8 +30,11 @@ public class RacingController {
         }
         output.howManyTrials();
         int trials = input.input_trials();
-        cars.racingGame(trials);
-        output.showTrialResult();
-        cars.PrintWinners();
+        output.showTrialResultHeader();
+        for(int i = 0; i < trials; i++){
+            cars.racingGame();
+            output.showTrialResult(cars);
+        }
+        output.showWinners(cars);
     }
 }
