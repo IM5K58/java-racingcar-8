@@ -4,11 +4,11 @@ import camp.nextstep.edu.missionutils.Console;
 
 public class Input {
 
-    public String input_name(){
+    public String inputName(){
         return Console.readLine();
     }
 
-    public int input_trials(){
+    public int inputTrials(){
         return Integer.parseInt(Console.readLine());
     }
 

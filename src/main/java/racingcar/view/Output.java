@@ -21,11 +21,7 @@ public class Output {
         System.out.println("실행 결과");
     }
 
-    public void showTrialResult(RacingCarList racingCars){
-        showRoundResult(racingCars);
-    }
-
-    private void showRoundResult(RacingCarList racingCars) {
+    public void showRoundResult(RacingCarList racingCars) {
         for (RacingCar car : racingCars.getCarList()) {
             String progress = MOVE_SIGN.repeat(car.getProgress());
             System.out.println(car.getName() + " : " + progress);
@@ -36,6 +32,10 @@ public class Output {
     public void showWinners(RacingCarList racingCars) {
         ArrayList<RacingCar> winners = racingCars.findRacingWinner();
         System.out.print("최종 우승자 : ");
+        writeDownWinners(winners);
+    }
+
+    private void writeDownWinners(ArrayList<RacingCar> winners) {
         for(int i = 0; i < winners.size(); i++){
             System.out.print(winners.get(i).getName());
             if(!(i == winners.size()-1)){

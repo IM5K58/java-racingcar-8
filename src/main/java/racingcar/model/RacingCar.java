@@ -3,13 +3,12 @@ package racingcar.model;
 import camp.nextstep.edu.missionutils.Randoms;
 public class RacingCar {
     private final String carName;
-    private int raceProgressCount; // 이걸 분리?    
+    private int raceProgressCount;
 
     private static final int RANGE_START = 0;
     private static final int RANGE_END = 9;
     private static final int RANGE_LIMIT = 4;
     private static final int MOVE_VALUE = 1;
-    private static final String MOVE_SIGN = "-";
 
     public RacingCar(String carName){
         this.carName = carName;
